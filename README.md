@@ -1,3 +1,1 @@
-# Mac trashes
-.localized
-.DS_Store
+Coding test-Middle level: Data-structure and Algorithm
