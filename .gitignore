@@ -1,3 +1,7 @@
 # Mac trashes
 .DS_Store
 .localized
+
+# Hongju
+test.py
+test.ipynb
