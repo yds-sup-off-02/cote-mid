@@ -18,9 +18,6 @@
 #     return answer
 
 # Same-name runner:
-from cProfile import run
-
-
 def solution(participant, completion):
     answer = ''
 
@@ -48,12 +45,21 @@ def solution(participant, completion):
         if my_hash[runner] != 0:
             my_hash[runner] += 1
         else:
-            my_hash[runner] += 1
+            my_hash[runner] = 1
 
-    # Checker
-    for key in my_hash:
+    # Modifier
+    for key in my_hash: # keys()
         if key in completion:
             my_hash[key] -= 1
 
-    answer = my_hash.keys()[0]
+    # Checker
+    for key in my_hash:
+        if my_hash[key] != 0:
+            answer = key
+    
     return answer
+
+solution(
+    ["leo", "kiki", "eden"],
+    ["eden", "kiki"]
+)
