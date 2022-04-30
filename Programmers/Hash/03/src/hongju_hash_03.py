@@ -1,13 +1,27 @@
+import collections
+
 def solution(clothes):
-    my_hash = {}
-    # item_ls = []
-
-    for set in clothes:
-        my_hash[set[1]]
-        # item_ls
-        # my_hash[key] = clothes[key]
-
     answer = 0
+    my_hash = {}
+
+    # Init Hash
+    for product, cat in clothes.itmes(): # category
+        if my_hash.key(cat):
+            my_hash[cat] = 1
+        else:
+            my_hash[cat] += 1
+
+    # Counting cases
+    # Get max(Kind of Categories)
+    cat_max = len(my_hash) # == my_hash.keys()
+
+    tmp = 1 # Minimum number of case >= 1
+
+    for n in my_hash.values():
+        for i in range(1, cat_max + 1):
+            n * 1
+
+    print(answer)
     return answer
 
 solution([
