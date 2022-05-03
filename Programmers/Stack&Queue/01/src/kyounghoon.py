@@ -37,7 +37,7 @@ def solution(progresses, speeds):
         if count > 0: # count가 0 이상일때만 리스트에 추가
             final_list.append(count)
 
-        if sum(final_list) > 0:
+        if sum(final_list) > 0: # Queue 방식으로 사용이 가능하도록 리스트 내에 시작점을 final_list의 sum값으로 변경해줌
             position = sum(final_list)
 
         if position == len(results):
