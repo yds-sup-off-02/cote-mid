@@ -1,0 +1,64 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled4.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "pPEJlJCQDJyp"
+      },
+      "outputs": [],
+      "source": [
+        "def solution(clothes):\n",
+        "\n",
+        "#1 옷을 종류별로 구분\n",
+        "    hash_map = {}\n",
+        "    for clothe, type in clothes:\n",
+        "        hash_map[type]=hash_map.get(type, 0)+1\n",
+        "\n",
+        "#print(hash_map)\n",
+        "#2 입지않는 경우를 추가해 모든 조합을 계산한다\n",
+        "    answer = 1\n",
+        "    for type in hash_map:\n",
+        "        answer *= (hash_map[type]+1)\n",
+        "\n",
+        "#print(answer)\n",
+        "#3 아무것도 입지않을 경우를 제외\n",
+        "    return answer -1\n",
+        "\n",
+        "#1 종류별로 분류\n",
+        "#2 입지않는 경우 추가(헤드기어나 아이웨어를 꼭 써야하는게 아니기 때문)=none을 추가 그럼 3*2해서 6이 기대값인데 none끼리는 조합이 될수 없기때문에 -1을 해준다\n",
+        "#3 전체조합\n",
+        "\n",
+        "\n",
+        "#print(solution(    [[\"yellow_hat\", \"headgear\"], [\"blue_sunglasses\", \"eyewear\"], [\"green_turban\", \"headgear\"]]))\n",
+        "#실행한 결괏값 0이(가) 기댓값 5와(과) 다릅니다."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "m9TL7JwRDLDS"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
