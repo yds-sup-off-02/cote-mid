@@ -2,7 +2,7 @@ def solution(progresses, speeds):
     
     
     '''
-    진행도에 작업진행속도(Speeds)를 더해서 순차적으로 100이 넘는 Range를 list를 정리하는 함수
+    진행도에 작업진행속도(Speeds)를 더해서 순차적으로 100이 넘는 Range 별로 list로 정리하는 함수
     '''
     
     results = [] # speeds와 progresses를 더한 결과 저장
@@ -25,7 +25,7 @@ def solution(progresses, speeds):
                 # 100 넘어가는 index value가 복수인 경우
                 elif (results[position] >= 100 and results[j] >= 100 and results[j+1] >= 100):
                     count += 1
-                    # j+1로 for문을 돌기 때문에 마지막 2칸을 읽지 못하는 경우가 생겨서 2칸 모두 100이 넘으면 count를 한번 더해주는 방식
+                    # j+1로 for 문을 돌기 때문에 마지막 2칸을 읽지 못하는 경우가 생겨서 2칸 모두 100이 넘으면 count를 한번 더해주는 방식
                     if results[position] >= 100 and j == (len(results) - 2) and results[-2] >= 100 and results[-1] >= 100:
                         count += 1
                         break                    
