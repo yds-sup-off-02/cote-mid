@@ -1,0 +1,66 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled4.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pPEJlJCQDJyp",
+        "outputId": "7564e5ce-7358-4c27-9ca4-79fc882da02e"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "leo\n"
+          ]
+        }
+      ],
+      "source": [
+        "def solution(participant, completion):\n",
+        "    answer = ''\n",
+        "    #1.두 리스트를 쇼팅한다\n",
+        "    participant.sort()\n",
+        "    completion.sort()\n",
+        "\n",
+        "    #2.컴플리션 리스트의 랭스만큼 돌면서 파티시팬트리스트에 존재하지 않는 한 선     수를 찾는다\n",
+        "    for i in range(len(completion)):\n",
+        "        if participant[i] !=completion[i]:\n",
+        "            return participant[i]\n",
+        "    #3.전부 다 돌아도 없을 경우에는 마지막 주자가 완주하지 못했다.\n",
+        "    return participant[len(participant)-1]\n",
+        "\n",
+        "print(solution([\"leo\", \"kiki\", \"eden\"], [\"eden\",\"kiki\"]))"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "m9TL7JwRDLDS"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
