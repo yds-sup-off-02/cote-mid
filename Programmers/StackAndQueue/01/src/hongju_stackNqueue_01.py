@@ -37,6 +37,7 @@ def solution(progresses, speeds):
                 cnt = 0
             
     answer.append(cnt)
+    # print(answer)
     return answer
 
 '''
@@ -44,14 +45,17 @@ Q. FIFO 큐의 특성을 고려할 때, 단위 날짜(하루)당 몇 개의 기�
     (FIFO 큐이므로, 어떤 작업이 완료 돼도 반드시 앞의 작업이 완료 돼야 큐에서 나갈 수 있다)
     e.g. 7일째에 2개의 기능, 9일째에 1개의 기능
 
-    Input:
+    Input
         progresses: 작업들 각각의 현재 진행 상태를 나타내는 1차원 배열
         speeds: 그 작업들 각각의 진행 속도를 나타내는 1차원 배열
             (단, 작업 속도는 변하지 않는다고 가정함)
 
-    Output:
+    Output
         1차원 배열 answer:
             단위 날짜(하루)를 기준으로 몇 개의 작업이 동시에 배포되는가?
+    
+    Keypoint
+        FIFO 큐의 이해
 '''
 
 solution(progresses=[93, 30, 55], speeds=[1, 30, 5])
