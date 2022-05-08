@@ -2,9 +2,9 @@
 .DS_Store
 .localized
 
+# Python
+.ipynb_checkpoints/
+
 # Hongju
 test.py
 test.ipynb
-
-# Python
-.ipynb_checkpoints/
