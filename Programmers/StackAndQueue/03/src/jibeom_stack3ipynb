@@ -1,0 +1,86 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled12.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "id": "qPALRc9A4nL2"
+      },
+      "outputs": [],
+      "source": [
+        "#시간을 세는 과정\n",
+        "#시간:0 / 도착트럭:0 / 다리길이:2(0:0) / 남은 트럭들:7,4,5,6\n",
+        "#시간:1 / 도착트럭:0 / 다리길이:2(0:7) / 남은 트럭들:4,5,6\n",
+        "#시간:2 / 도착트럭:0 / 다리길이:2(7:0) / 남은 트럭들:4,5,6\n",
+        "#시간:3 / 도착트럭:7 / 다리길이:2(0:4) / 남은 트럭들:5,6\n",
+        "#시간:4 / 도착트럭:7 / 다리길이:2(4,5) / 남은 트럭들:6\n",
+        "#시간:5 / 도착트럭:7,4 / 다리길이:2(5:0) / 남은 트럭들:6\n",
+        "#시간:6 / 도착트럭:7,4,5 / 다리길이:2(0:6) / 남은 트럭들:0\n",
+        "#시간:7 / 도착트럭:7,4,5 / 다리길이:2(6:0) / 남은 트럭들:0\n",
+        "#시간:8 / 도착트럭:7,4,5,6 / 다리길이:2(0:0) / 남은 트럭들:0\n",
+        "\n",
+        "\n",
+        "def solution(bridge_length, weight, truck_weights):\n",
+        "\n",
+        "    #경과시간\n",
+        "    answer = 0 \n",
+        "    #다리 길이와 같은 길이의 값이 0으로 된 리스트 생성\n",
+        "    bridge = [0 for _ in range(bridge_length)]\n",
+        "\n",
+        "    #트럭이 다리를 지나는 과정을 answer += 1을 통해서 경과시간을 계산\n",
+        "    while bridge:\n",
+        "\n",
+        "        answer += 1\n",
+        "        bridge.pop(0)\n",
+        "     #bridge 리스트 안 (즉, 다리 위에 있느 트럭의 총 무게)과 다음 대기열에       있는 트럭 무게가 다리가 감당할 수 있는 총 무게 (weight) 을 넘지 않는       조건을 만족하면 다음 트럭을 리스트에 추가한다   \n",
+        "        if truck_weights:\n",
+        "            if sum(bridge) + truck_weights[0] <= weight:           #만족을 하지 못한다면 0을 추가하여 다리의 길이를 유지 \n",
+        "                t = truck_weights.pop(0)\n",
+        "                bridge.append(t)\n",
+        "      #트럭의 대기열의 길이가 0이 되면 내부 반복문 종료          \n",
+        "            else:\n",
+        "                bridge.append(0)\n",
+        "      #bridge 리스트의 길이가 0이 되면 반복문 종료후 경과시간 (answer)        리턴  \n",
+        "\n",
+        "    return answer"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "FqER0E8x4nl3"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "B009qN3t4s-H"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
